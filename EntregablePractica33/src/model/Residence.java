@@ -14,7 +14,8 @@ import javafx.beans.property.StringProperty;
  */
 public class Residence {
     private StringProperty ciudad = new SimpleStringProperty();
-    private StringProperty calle = new SimpleStringProperty();
+    private String stciudad;
+        private StringProperty calle = new SimpleStringProperty();
 
     public StringProperty getCiudad() {
         return ciudad;
@@ -37,11 +38,25 @@ public class Residence {
         this.calle.set(calle);
     }
     
-    public StringProperty laDireccion(){
-        StringProperty value =  new SimpleStringProperty();
-        value.set(this.getCiudad().get()+" - "+this.getCalle().get());
-        return value;
+     public Residence(String ciudad, String calle,String stciudad) {
+        this.ciudad.set(ciudad);
+        this.calle.set(calle);
+        this.stciudad = stciudad;
     }
+    
+    public String laDireccion(){
+        return (this.getCiudad().get()+" - "+this.getCalle().get());
+    }
+
+    public String getStciudad() {
+        return stciudad;
+    }
+
+    public void setStciudad(String stciudad) {
+        this.stciudad = stciudad;
+    }
+    
+    
     
     
     

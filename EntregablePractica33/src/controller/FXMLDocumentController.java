@@ -83,7 +83,7 @@ public class FXMLDocumentController implements Initializable {
                     if (item == null || empty) {
                         setText(null);
                     } else {
-                        setText(item.laDireccion().get());
+                        setText(item.laDireccion());
                     }
                 }
             };
